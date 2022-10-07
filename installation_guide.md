@@ -88,7 +88,7 @@ python tools/train.py -expn <exp_name> -f <path_to_exp_file> -d <num_gpus> -b <b
 * For example:
 
 ```
-python tools/train.py -expn sp_ppe_1 -f .\exps\custom\sp_ppe_1.py -d 1 -b 16 --fp16 -o -c .\weights\pretrained\yolox_m.pth
+python tools/train.py -expn sp_ppe -f .\exps\custom\sp_ppe.py -d 1 -b 16 --fp16 -o -c .\weights\pretrained\yolox_s.pth
 ```
 
 * Once training is completed, go to the output directory where the weights are saved to and copy the ```best_ckpt.pth``` file to the ```weights``` folder, under a <exp_name> subfolder.
