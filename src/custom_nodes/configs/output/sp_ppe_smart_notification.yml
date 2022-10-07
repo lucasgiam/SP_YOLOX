@@ -1,0 +1,9 @@
+input: ["all"]
+output: ["none"]
+
+img_dir: ""
+vid_dir: ""
+frames_threshold: 100
+begin_threshold: 200
+time_betw_trigs: 60
+frames_percent_trig: 0.80       

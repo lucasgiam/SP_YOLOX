@@ -4,6 +4,8 @@
 # user experiments directory
 YOLOX_outputs/
 datasets/
+datasets_test/
+pkd_outputs/
 # do not ignore datasets under yolox/data
 !*yolox/data/datasets/
 

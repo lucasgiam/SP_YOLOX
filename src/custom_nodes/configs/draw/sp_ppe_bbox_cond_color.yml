@@ -1,0 +1,4 @@
+input: ["bboxes", "img", "bbox_labels"]
+output: ["none"]
+
+show_labels: True

@@ -18,8 +18,8 @@ class Exp(MyExp):
         self.depth = 0.33                       # yolo-s = 0.33, yolo-m = 0.67, yolo-l = 1.00
         self.width = 0.50                       # yolo-s = 0.50, yolo-m = 0.75, yolo-l = 1.00
         self.warmup_epochs = 1                  # num of epochs used for warmup
-        self.max_epoch = 50                      # minimum learning rate during warmup       
-        self.basic_lr_per_img = 0.01 / 64.0     # learning rate for one image. During training, lr will multiply batchsize.
+        self.max_epoch = 50                     # max num of epochs used for training     
+        self.basic_lr_per_img = 0.01 / 64.0     # learning rate for one image (during training, lr will multiply batchsize)
         self.scheduler = "yoloxwarmcos"         # name of LRScheduler
         self.weight_decay = 5e-4                # weight decay of optimizer
         self.momentum = 0.9                     # momentum of optimizer

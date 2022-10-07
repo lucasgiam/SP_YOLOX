@@ -1,0 +1,5 @@
+input: ["img", "filename", "saved_video_fps", "pipeline_end"]
+output: ["filename"]
+
+output_dir: ""
+num_img_to_store: ""

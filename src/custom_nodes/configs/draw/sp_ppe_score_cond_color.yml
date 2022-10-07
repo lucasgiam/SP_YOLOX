@@ -1,0 +1,5 @@
+# Mandatory configs
+input: ["img", "bboxes", "bbox_labels", "bbox_scores"]
+output: ["none"]
+
+# No optional configs
