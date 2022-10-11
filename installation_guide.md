@@ -68,9 +68,9 @@ VOC_CLASSES = (
 
 ## 3. Download pre-trained weights
 
-* In the root directory, enter the following command to download pre-trained weights into the ```weights``` folder. Note that you can change ```yolo_m``` to ```yolo_s``` or ```yolo_l```, depending on the size of the model that you want.
+* In the root directory, enter the following command to download pre-trained weights into the ```weights``` folder. Note that you can change ```yolo_s``` to ```yolo_m``` or ```yolo_l```, depending on the size of the model that you want.
 
-``` wget.exe -P weights/pretrained https://github.com/Megvii-BaseDetection/storage/releases/download/0.0.1/yolox_m.pth ```
+``` wget.exe -P weights/pretrained https://github.com/Megvii-BaseDetection/storage/releases/download/0.0.1/yolox_s.pth ```
 
 (Note: If you do not already have ```wget.exe``` installed on your computer, you can refer to this video on how to do so: https://youtu.be/CkpTEJH6xkg)
 

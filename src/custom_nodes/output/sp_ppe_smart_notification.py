@@ -28,9 +28,9 @@ class Node(AbstractNode):
         self.frames_percent_trig: float 
         self.violation_classes = {          # dict mapping class_label to violation_id
             "no ppe": 0, 
-            "no mask and vest": 2,
-            "no helmet and vest": 3,
-            "no helmet and mask": 4,
+            "no mask & vest": 2,
+            "no helmet & vest": 3,
+            "no helmet & mask": 4,
             "no helmet": 5,
             "no vest": 6,
             "no mask": 7

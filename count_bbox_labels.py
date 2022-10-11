@@ -1,7 +1,7 @@
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-xmldir = r'C:\Users\Admin\Desktop\image 151-200\annotations_test'
+xmldir = "./datasets/sp_ppe/VOCdevkit/VOC2012/Annotations"
 
 xmlnames = sorted(list(Path.iterdir(Path(xmldir))))
 

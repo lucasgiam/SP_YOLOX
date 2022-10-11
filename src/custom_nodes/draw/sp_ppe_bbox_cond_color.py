@@ -187,7 +187,7 @@ class Node(AbstractNode):
         for status in inputs["bbox_labels"]:
             if status == 'all ppe':
                 color = [0, 255, 0]
-            elif status == "no mask and vest" or status == "no helmet and vest" or status == "no helmet and mask":
+            elif status == "no mask & vest" or status == "no helmet & vest" or status == "no helmet & mask":
                 color = [0, 100, 255]
             elif status == "no helmet" or status == "no vest" or status == "no mask":
                 color = [0, 200, 255]

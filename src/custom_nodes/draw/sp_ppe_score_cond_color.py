@@ -72,7 +72,7 @@ class Node(AbstractNode):
         for status in labels:
             if status == 'all ppe':
                 score_color = [0, 255, 0]
-            elif status == "no mask and vest" or status == "no helmet and vest" or status == "no helmet and mask":
+            elif status == "no mask & vest" or status == "no helmet & vest" or status == "no helmet & mask":
                 score_color = [0, 100, 255]
             elif status == "no helmet" or status == "no vest" or status == "no mask":
                 score_color = [0, 200, 255]

@@ -4,8 +4,9 @@ nodes:
     # source: "./datasets_test/sp_ppe_test_set"
 - custom_nodes.model.sp_ppe_yolox:
     exp_path: "./exps/custom/sp_ppe.py"
-    ckpt_file: "./weights/sp_ppe/best_ckpt_yolox_s.pth"
-    confthre: 0.5
+    ckpt_file: "./weights/sp_ppe/yolox_s_stable.pth"
+    # ckpt_file: "./YOLOX_outputs/sp_ppe_20epoch_4bs/best_ckpt.pth"
+    confthre: 0.7
     nmsthre: 0.5
 - custom_nodes.draw.sp_ppe_bbox_cond_color
 - custom_nodes.draw.sp_ppe_score_cond_color

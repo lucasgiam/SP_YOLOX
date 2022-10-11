@@ -6,7 +6,7 @@ import numpy as np
 # User configs
 root_path = "./datasets/sp_ppe/VOCdevkit/VOC2012"
 seed = 1993
-train_percent = 0.7
+train_percent = 0.8
 val_percent = 0.2
 
 

@@ -18,8 +18,8 @@ class Exp(MyExp):
         self.depth = 0.33                       # yolo-s = 0.33, yolo-m = 0.67, yolo-l = 1.00
         self.width = 0.50                       # yolo-s = 0.50, yolo-m = 0.75, yolo-l = 1.00
         self.warmup_epochs = 1                  # num of epochs used for warmup
-        self.max_epoch = 50                     # max num of epochs used for training     
-        self.basic_lr_per_img = 0.01 / 64.0     # learning rate for one image (during training, lr will multiply batchsize)
+        self.max_epoch = 20                     # max num of epochs used for training     
+        self.basic_lr_per_img = 0.01 / 4.0      # learning rate for one image (during training, lr will multiply batchsize)
         self.scheduler = "yoloxwarmcos"         # name of LRScheduler
         self.weight_decay = 5e-4                # weight decay of optimizer
         self.momentum = 0.9                     # momentum of optimizer
@@ -33,8 +33,8 @@ class Exp(MyExp):
         self.mixup_prob = 1.0                   # prob of applying mixup aug
         self.hsv_prob = 1.0                     # prob of applying hsv aug
         self.flip_prob = 0.5                    # prob of applying flip aug
-        self.degrees = 10.0                     # rotation angle range, for example, if set to 2.0, the true range is (-2.0, 2.0)
-        self.translate = 0.1                    # translatation range, for example, if set to 0.1, the true range is (-0.1, 0.1)
+        self.degrees = 10.0                     # rotation angle range in degrees, for example, if set to 2.0, the true range is (-2.0, 2.0)
+        self.translate = 0.1                    # translation range in fraction, for example, if set to 0.1, the true range is (-0.1, 0.1)
         self.scale = (0.1, 2.0)                 # scaling range
         self.mosaic_scale = (0.8, 1.6)          # mosaic scaling range
         self.shear = 2.0                        # shear angle range, for example, if set to 2.0, the true range is (-2.0, 2.0)
