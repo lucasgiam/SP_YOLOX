@@ -40,6 +40,7 @@ class Exp(MyExp):
         self.shear = 2.0                        # shear angle range, for example, if set to 2.0, the true range is (-2.0, 2.0)
         self.enable_mixup = True                # to apply mixup aug or not
         # ---------------------------------------- #
+        self.perspective = 0
         self.exp_name = os.path.split(os.path.realpath(__file__))[1].split(".")[0]
         print("num_classes: ", self.num_classes)
 
