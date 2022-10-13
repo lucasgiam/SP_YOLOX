@@ -18,14 +18,15 @@ class Exp(MyExp):
         self.depth = 0.33                       # yolo-s = 0.33, yolo-m = 0.67, yolo-l = 1.00
         self.width = 0.50                       # yolo-s = 0.50, yolo-m = 0.75, yolo-l = 1.00
         self.warmup_epochs = 1                  # num of epochs used for warmup
-        self.max_epoch = 20                     # max num of epochs used for training     
-        self.basic_lr_per_img = 0.01 / 4.0      # learning rate for one image (during training, lr will multiply batchsize)
-        self.scheduler = "yoloxwarmcos"         # name of LRScheduler
-        self.weight_decay = 5e-4                # weight decay of optimizer
+        self.max_epoch = 30                     # max num of epochs used for training     
+        self.basic_lr_per_img = 0.001 / 32.0    # learning rate for one image (during training, lr will multiply batchsize)
+        self.scheduler = "yoloxwarmcos"         # name of learning rate scheduler
+        self.weight_decay = 0.1                 # weight decay of optimizer
         self.momentum = 0.9                     # momentum of optimizer
-        self.data_num_workers = 2               # num of workers
+        self.data_num_workers = 4               # num of workers
         self.input_size = (640, 640)            # input image size (height, width)
         self.test_size = (640, 640)             # output image size during evaluation/testing
+        self.nmsthre = 0.50                     # nms threshold during evaluation/testing
         self.print_interval = 1                 # log period in iter, for example, if set to 1, user could see log every iteration
         self.eval_interval = 1                  # eval period in epoch, for example, if set to 1, model will be evaluate after every epoch
         # ---------- transform config ------------ #

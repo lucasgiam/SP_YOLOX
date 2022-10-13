@@ -119,28 +119,29 @@ class Node(AbstractNode):
 
         vid_name, vid_path = self.img_to_vid()  
         # vidURL = self.upload_to_google_drive(vid_name, vid_path)
+        vidURL = ""
 
-        # url = 'http://52.221.211.53/SendNotification'
+        url = 'http://52.221.211.53/SendNotification'
 
-        # dt = datetime.datetime.now()
-        # dt = int(time.mktime(dt.timetuple())) + 8*60*60   # convert to GMT+8 hours to seconds
-        # instance = 1
+        dt = datetime.datetime.now()
+        dt = int(time.mktime(dt.timetuple())) + 8*60*60   # convert to GMT+8 hours to seconds
+        instance = 1
 
-        # payload = {
-        #     "alarms" : [
-        #         {
-        #             "camId": '1',
-        #             "time": dt,
-        #             "startTime": dt,
-        #             "endTime": dt+10,
-        #             "instance": instance,
-        #             "violationType": violation_id,
-        #             "videoUrl": vidURL
-        #         }
-        #     ]
-        # }
+        payload = {
+            "alarms" : [
+                {
+                    "camId": '1',
+                    "time": dt,
+                    "startTime": dt,
+                    "endTime": dt+10,
+                    "instance": instance,
+                    "violationType": violation_id,
+                    "videoUrl": vidURL
+                }
+            ]
+        }
 
-        # requests.post(url, json = payload, verify = False)
+        requests.post(url, json = payload, verify = False)
 
         print("triggered send_to_payload:", "violation_id =", violation_id)
         # print("self.global_violation_ids: ", self.global_violation_ids)
@@ -193,7 +194,6 @@ class Node(AbstractNode):
     #     print('Uploaded file %s with mimeType %s' % (vid_upload['title'], vid_upload['mimeType']))
 
     #     # Generate URL to file
-    #     # vidURL = vid_upload['alternateLink']
     #     vidURL = 'https://drive.google.com/uc?export=download&id=' + str(vid_upload['id'])
         
     #     return vidURL
