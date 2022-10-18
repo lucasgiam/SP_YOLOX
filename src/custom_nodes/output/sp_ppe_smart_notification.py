@@ -10,6 +10,11 @@ from pydrive.drive import GoogleDrive
 from peekingduck.pipeline.nodes.abstract_node import AbstractNode
 
 
+
+from requests_file import FileAdapter
+
+
+
 class Node(AbstractNode):
 
     def __init__(self, config: Dict[str, Any] = None, **kwargs: Any) -> None:
@@ -118,7 +123,7 @@ class Node(AbstractNode):
     def send_to_payload(self, violation_id):
 
         vid_name, vid_path = self.img_to_vid()  
-        # vidURL = self.upload_to_google_drive(vid_name, vid_path)
+        # vidURL = self.upload_to_google_drive(vid_name, vid_path)        
         vidURL = ""
 
         url = 'http://52.221.211.53/SendNotification'

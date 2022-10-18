@@ -4,6 +4,7 @@ nodes:
     # source: "./datasets_test/sp_ppe_test_set"
 - custom_nodes.model.sp_ppe_yolox:
     exp_path: "./exps/custom/sp_ppe.py"
+    # ckpt_file: "./YOLOX_outputs/sp_ppe/best_ckpt.pth"
     ckpt_file: "./weights/sp_ppe_stable/yolox_s_bs=32_lr=0.001_wd=0.1.pth"
     confthre: 0.5
     nmsthre: 0.5
