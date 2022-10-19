@@ -88,7 +88,7 @@ python tools/train.py -expn <exp_name> -f <path_to_exp_file> -d <num_gpus> --dis
 * For example:
 
 ```
-python tools/train.py -expn sp_ppe -f .\exps\custom\sp_ppe.py -d 2 --dist-backend gloo -b 16 --fp16 -o -c .\weights\pretrained\yolox_s.pth
+python tools/train.py -expn sp_ppe_test -f .\exps\custom\sp_ppe.py -d 2 --dist-backend gloo -b 16 --fp16 -o -c .\weights\pretrained\yolox_s.pth
 ```
 
 * Once training is completed, go to the output directory where the weights are saved to and copy the ```best_ckpt.pth``` file to the ```weights``` folder, under a <exp_name> subfolder.
@@ -108,3 +108,7 @@ python tools/train.py -expn sp_ppe -f .\exps\custom\sp_ppe.py -d 2 --dist-backen
 * In the terminal window, enter the following command:
 
 ```peekingduck run```
+
+* In order to view the 10-second video clip in the mobile app, you will first need to set up the web server on this computer and ensure that both the mobile phone and this computer are connected to the same network. To set up the web server, open a separate terminal window and enter the following command:
+
+```python -m http.server```

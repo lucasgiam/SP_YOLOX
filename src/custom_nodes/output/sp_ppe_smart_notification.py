@@ -5,14 +5,9 @@ import os
 import requests
 import datetime 
 import time
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
 from peekingduck.pipeline.nodes.abstract_node import AbstractNode
-
-
-
-from requests_file import FileAdapter
-
+# from pydrive.auth import GoogleAuth
+# from pydrive.drive import GoogleDrive
 
 
 class Node(AbstractNode):
@@ -30,7 +25,8 @@ class Node(AbstractNode):
         self.frames_threshold: int
         self.begin_threshold: int
         self.time_betw_trigs: int
-        self.frames_percent_trig: float 
+        self.frames_percent_trig: float
+        self.host_ip_address: str
         self.violation_classes = {          # dict mapping class_label to violation_id
             "no ppe": 0, 
             "no mask & vest": 2,
@@ -122,9 +118,10 @@ class Node(AbstractNode):
 
     def send_to_payload(self, violation_id):
 
-        vid_name, vid_path = self.img_to_vid()  
+        vid_name = self.img_to_vid()
+        
         # vidURL = self.upload_to_google_drive(vid_name, vid_path)        
-        vidURL = ""
+        vidURL = 'http://' + self.host_ip_address + self.vid_dir.split('.')[1] + '/' + vid_name
 
         url = 'http://52.221.211.53/SendNotification'
 
@@ -169,7 +166,7 @@ class Node(AbstractNode):
 
         video.release()
 
-        return vid_name, vid_path
+        return vid_name
 
 
     # def upload_to_google_drive(self, vid_name, vid_path):

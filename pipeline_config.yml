@@ -1,11 +1,11 @@
 nodes:
 - input.visual:
-    source: 1
+    source: 0
     # source: "./datasets_test/sp_ppe_test_set"
 - custom_nodes.model.sp_ppe_yolox:
     exp_path: "./exps/custom/sp_ppe.py"
-    # ckpt_file: "./YOLOX_outputs/sp_ppe/best_ckpt.pth"
-    ckpt_file: "./weights/sp_ppe_stable/yolox_s_bs=32_lr=0.001_wd=0.1.pth"
+    ckpt_file: "./YOLOX_outputs/sp_ppe_test/best_ckpt.pth"
+    # ckpt_file: "./weights/sp_ppe_stable/yolox_s_bs=32_lr=0.001_wd=0.1.pth"
     confthre: 0.5
     nmsthre: 0.5
 - custom_nodes.draw.sp_ppe_bbox_cond_color
@@ -21,7 +21,7 @@ nodes:
 
 # nodes:
 # - input.visual:
-#     source: 1
+#     source: 0
 # - custom_nodes.model.sp_ppe_yolox:
 #     exp_path: "./exps/custom/sp_ppe.py"
 #     ckpt_file: "./weights/sp_ppe_stable/yolox_s_bs=32_lr=0.001_wd=0.1.pth"
@@ -40,4 +40,5 @@ nodes:
 #     begin_threshold: 200                       # min number of frames before starting the smart notification algo (usually set to be equal to num_img_to_store in vid2img_writer node)
 #     time_betw_trigs: 60                        # time (in seconds) between two instances of same PPE non-compliance to trigger a violation alert
 #     frames_percent_trig: 0.80                  # percentage of self.frames_threshold to trigger a violation alert, e.g. if self.frames_threshold = 100, then as long as any 90 frames are PPE non-compliance, it will trigger a violation alert
+#     host_ip_address: '192.168.1.190:8000'      # IP address and port of host web server
 # - output.screen
