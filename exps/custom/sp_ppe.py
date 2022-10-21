@@ -19,7 +19,7 @@ class Exp(MyExp):
         self.width = 0.50                       # yolo-s = 0.50, yolo-m = 0.75, yolo-l = 1.00
         self.warmup_epochs = 1                  # num of epochs used for warmup
         self.max_epoch = 50                     # max num of epochs used for training     
-        self.basic_lr_per_img = 0.001 / 64.0    # learning rate for one image (during training, lr will multiply batchsize)
+        self.basic_lr_per_img = 0.001 / 16.0    # learning rate for one image (during training, lr will multiply batchsize)
         self.scheduler = "yoloxwarmcos"         # name of learning rate scheduler
         self.weight_decay = 0.1                 # weight decay of optimizer
         self.momentum = 0.9                     # momentum of optimizer
@@ -30,16 +30,18 @@ class Exp(MyExp):
         self.print_interval = 1                 # log period in iter, for example, if set to 1, user could see log every iteration
         self.eval_interval = 1                  # eval period in epoch, for example, if set to 1, model will be evaluate after every epoch
         # ---------- transform config ------------ #
-        self.mosaic_prob = 1.0                  # prob of applying mosaic aug
-        self.mixup_prob = 1.0                   # prob of applying mixup aug
-        self.hsv_prob = 1.0                     # prob of applying hsv aug
-        self.flip_prob = 0.5                    # prob of applying flip aug
+        self.mosaic_prob = 0.0                  # prob of applying mosaic aug (either 0 or 1 only)
+        self.mixup_prob = 0.5                   # prob of applying mixup aug
+        self.hsv_prob = 0.5                     # prob of applying hsv aug
+        self.flip_prob = 0.0                    # prob of applying flip aug
         self.degrees = 10.0                     # rotation angle range in degrees, for example, if set to 2.0, the true range is (-2.0, 2.0)
-        self.translate = 0.1                    # translation range in fraction, for example, if set to 0.1, the true range is (-0.1, 0.1)
-        self.scale = (0.1, 2.0)                 # scaling range
-        self.mosaic_scale = (0.8, 1.6)          # mosaic scaling range
+        self.translate = 0.0                    # translation range in fraction, for example, if set to 0.1, the true range is (-0.1, 0.1)
+        self.scale = (0.5, 1.0)                 # scaling range
+        self.mosaic_scale = (0.5, 1.0)          # mosaic aug scaling range
         self.shear = 2.0                        # shear angle range, for example, if set to 2.0, the true range is (-2.0, 2.0)
         self.enable_mixup = True                # to apply mixup aug or not
+        self.mixup_scale = (0.5, 1.0)           # mixup aug scaling range
+        self.no_aug_epochs = 0                  # num of remaining epochs to stop using data aug (= self.max_epochs for no data aug at all, = 0 to use data aug all the way)
         # ---------------------------------------- #
         self.perspective = 0
         self.exp_name = os.path.split(os.path.realpath(__file__))[1].split(".")[0]

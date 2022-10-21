@@ -5,9 +5,9 @@ import numpy as np
 
 # User configs
 root_path = "./datasets/sp_ppe/VOCdevkit/VOC2012"
-seed = 1993
-train_percent = 0.8
-val_percent = 0.2
+seed = 2022
+train_percent = 0.75
+val_percent = 0.25
 
 
 # Calculate test_percent from train_percent and val_percent
