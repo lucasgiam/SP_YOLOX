@@ -36,11 +36,11 @@ class Exp(MyExp):
         self.flip_prob = 0.5                    # prob of applying flip aug (reflection about y-axis)
         self.degrees = 10.0                     # rotation angle range in degrees, for example, if set to 2.0, the true range is (-2.0, 2.0)
         self.translate = 0.1                    # translation range in fraction, for example, if set to 0.1, the true range is (-0.1, 0.1)
-        self.scale = (0.5, 1.5)                 # scaling range
-        self.mosaic_scale = (0.5, 1.5)          # mosaic aug scaling range
+        self.scale = (0.1, 2.0)                 # scaling range
+        self.mosaic_scale = (0.1, 2.0)          # mosaic aug scaling range
         self.shear = 5.0                        # shear angle range, for example, if set to 2.0, the true range is (-2.0, 2.0)
         self.enable_mixup = True                # to apply mixup aug or not
-        self.mixup_scale = (0.5, 1.5)           # mixup aug scaling range
+        self.mixup_scale = (0.1, 2.0)           # mixup aug scaling range
         self.no_aug_epochs = 4                  # num of remaining epochs to stop using data aug (= self.max_epochs for no data aug at all, = 0 to use data aug all the way)
         # ---------------------------------------- #
         self.perspective = 0
