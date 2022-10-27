@@ -1,10 +1,10 @@
 nodes:
 - input.visual:
     source: 1
-    # source: "./datasets_test/sp_ppe_test_set"
+    # source: "./datasets/test.mp4"
 - custom_nodes.model.sp_ppe_yolox:
     exp_path: "./exps/custom/sp_ppe.py"
-    # ckpt_file: "./YOLOX_outputs/sp_ppe_test/best_ckpt.pth"
+    # ckpt_file: "./YOLOX_outputs/sp_ppe_test/epoch_48_ckpt.pth"
     ckpt_file: "./weights/sp_ppe_stable/yolox_s_stable.pth"
     confthre: 0.5
     nmsthre: 0.5
