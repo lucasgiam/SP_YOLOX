@@ -109,6 +109,6 @@ python tools/train.py -expn sp_ppe_test -f .\exps\custom\sp_ppe.py -d 2 --dist-b
 
 ```peekingduck run```
 
-* In order to view the 10-second video clip in the mobile app, you will first need to set up the web server on this computer and ensure that both the mobile phone and this computer are connected to the same network. To set up the web server, open a separate terminal window and enter the following command:
+* In order to view the 10-second video clip in the mobile app, you will first need to set up the web server on this computer and ensure that both the mobile phone and this computer are connected to the same network. To set up the web server, open a separate terminal window, cd to the project root directory and enter the following command:
 
 ```python -m http.server```

@@ -1,10 +1,9 @@
 nodes:
 - input.visual:
-    source: 1
-    # source: "./datasets/test.mp4"
+    source: 0
+    # source: "./datasets/test_1.mp4"
 - custom_nodes.model.sp_ppe_yolox:
     exp_path: "./exps/custom/sp_ppe.py"
-    # ckpt_file: "./YOLOX_outputs/sp_ppe_test/epoch_48_ckpt.pth"
     ckpt_file: "./weights/sp_ppe_stable/yolox_s_stable.pth"
     confthre: 0.5
     nmsthre: 0.5
@@ -13,10 +12,10 @@ nodes:
 - output.screen
 # - output.csv_writer:
 #     stats_to_track: ["filename", "bboxes", "bbox_labels"]
-#     file_path: ./pkd_outputs/all_annotations.csv
+#     file_path: "./pkd_outputs/all_annotations.csv"
 #     logging_interval: 0
 # - output.media_writer:
-#     output_dir: "./datasets_test/sp_ppe_test_set_pred_s"
+#     output_dir: "./datasets_test"
 
 
 # nodes:
@@ -31,7 +30,7 @@ nodes:
 # - custom_nodes.draw.sp_ppe_score_cond_color
 # - dabble.tracking
 # - custom_nodes.output.sp_ppe_vid2img_writer:
-#     output_dir: ./pkd_outputs/output_images    # stored images save directory
+#     output_dir: './pkd_outputs/output_images'  # stored images save directory
 #     num_img_to_store: 200                      # number of images to store at any one point in time
 # - custom_nodes.output.sp_ppe_smart_notification:
 #     img_dir: './pkd_outputs/output_images'     # stored images directory
@@ -42,3 +41,5 @@ nodes:
 #     frames_percent_trig: 0.80                  # percentage of self.frames_threshold to trigger a violation alert, e.g. if self.frames_threshold = 100, then as long as any 90 frames are PPE non-compliance, it will trigger a violation alert
 #     host_ip_address: '192.168.1.190:8000'      # IP address and port of host web server
 # - output.screen
+# - output.media_writer:
+#     output_dir: "./datasets_test"
